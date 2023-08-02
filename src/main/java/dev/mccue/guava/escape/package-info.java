@@ -14,7 +14,7 @@
 
 /**
  * Interfaces, utilities, and simple implementations of escapers and encoders. The primary type is
- * {@link dev.mccue.guava.escape.Escaper}.
+ * {@code Escaper}.
  *
  * <p>Additional escapers implementations are found in the applicable packages: {@code
  * dev.mccue.guava.html.HtmlEscapers} in {@code dev.mccue.guava.html}, {@code

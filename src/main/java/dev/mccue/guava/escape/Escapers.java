@@ -23,7 +23,7 @@ import dev.mccue.jsr305.CheckForNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
 /**
- * Static utility methods pertaining to {@link Escaper} instances.
+ * Static utility methods pertaining to {@code Escaper} instances.
  *
  * @author Sven Mawson
  * @author David Beaumont
@@ -34,7 +34,7 @@ public final class Escapers {
   private Escapers() {}
 
   /**
-   * Returns an {@link Escaper} that does no escaping, passing all character data through unchanged.
+   * Returns an {@code Escaper} that does no escaping, passing all character data through unchanged.
    */
   public static Escaper nullEscaper() {
     return NULL_ESCAPER;
@@ -82,7 +82,7 @@ public final class Escapers {
    * A builder for simple, fast escapers.
    *
    * <p>Typically an escaper needs to deal with the escaping of high valued characters or code
-   * points. In these cases it is necessary to extend either {@link ArrayBasedCharEscaper} or {@link
+   * points. In these cases it is necessary to extend either {@code ArrayBasedCharEscaper} or {@code
    * ArrayBasedUnicodeEscaper} to provide the desired behavior. However this builder is suitable for
    * creating escapers that replace a relative small set of characters.
    *
@@ -163,12 +163,12 @@ public final class Escapers {
   }
 
   /**
-   * Returns a {@link UnicodeEscaper} equivalent to the given escaper instance. If the escaper is
+   * Returns a {@code UnicodeEscaper} equivalent to the given escaper instance. If the escaper is
    * already a UnicodeEscaper then it is simply returned, otherwise it is wrapped in a
    * UnicodeEscaper.
    *
-   * <p>When a {@link CharEscaper} escaper is wrapped by this method it acquires extra behavior with
-   * respect to the well-formedness of Unicode character sequences and will throw {@link
+   * <p>When a {@code CharEscaper} escaper is wrapped by this method it acquires extra behavior with
+   * respect to the well-formedness of Unicode character sequences and will throw {@code
    * IllegalArgumentException} when given bad input.
    *
    * @param escaper the instance to be wrapped
@@ -192,7 +192,7 @@ public final class Escapers {
   /**
    * Returns a string that would replace the given character in the specified escaper, or {@code
    * null} if no replacement should be made. This method is intended for use in tests through the
-   * {@code EscaperAsserts} class; production users of {@link CharEscaper} should limit themselves
+   * {@code EscaperAsserts} class; production users of {@code CharEscaper} should limit themselves
    * to its public interface.
    *
    * @param c the character to escape if necessary
@@ -206,7 +206,7 @@ public final class Escapers {
   /**
    * Returns a string that would replace the given character in the specified escaper, or {@code
    * null} if no replacement should be made. This method is intended for use in tests through the
-   * {@code EscaperAsserts} class; production users of {@link UnicodeEscaper} should limit
+   * {@code EscaperAsserts} class; production users of {@code UnicodeEscaper} should limit
    * themselves to its public interface.
    *
    * @param cp the Unicode code point to escape if necessary

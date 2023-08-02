@@ -33,7 +33,7 @@ import dev.mccue.jsr305.CheckForNull;
  *
  * <p>Popular escapers are defined as constants in classes like {@code
  * dev.mccue.guava.html.HtmlEscapers} and {@code dev.mccue.guava.xml.XmlEscapers}. To create
- * your own escapers extend this class and implement the {@link #escape(char)} method.
+ * your own escapers extend this class and implement the {@code #escape(char)} method.
  *
  * @author Sven Mawson
  * @since 15.0
@@ -83,9 +83,9 @@ public abstract class CharEscaper extends Escaper {
 
   /**
    * Returns the escaped form of a given literal string, starting at the given index. This method is
-   * called by the {@link #escape(String)} method when it discovers that escaping is required. It is
+   * called by the {@code #escape(String)} method when it discovers that escaping is required. It is
    * protected to allow subclasses to override the fastpath escaping function to inline their
-   * escaping test. See {@link CharEscaperBuilder} for an example usage.
+   * escaping test. See {@code CharEscaperBuilder} for an example usage.
    *
    * @param s the literal string to be escaped
    * @param index the index to start escaping from

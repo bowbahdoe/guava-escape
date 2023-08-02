@@ -14,11 +14,13 @@
 
 package dev.mccue.guava.escape;
 
+
 /**
  * Methods factored out so that they can be emulated differently in GWT.
  *
  * @author Jesse Wilson
  */
+
 @ElementTypesAreNonnullByDefault
 final class Platform {
   private Platform() {}

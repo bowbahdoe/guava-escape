@@ -20,8 +20,8 @@ import java.util.Collections;
 import java.util.Map;
 
 /**
- * An implementation-specific parameter class suitable for initializing {@link
- * ArrayBasedCharEscaper} or {@link ArrayBasedUnicodeEscaper} instances. This class should be used
+ * An implementation-specific parameter class suitable for initializing {@code
+ * ArrayBasedCharEscaper} or {@code ArrayBasedUnicodeEscaper} instances. This class should be used
  * when more than one escaper is created using the same character replacement mapping to allow the
  * underlying (implementation specific) data structures to be shared.
  *
@@ -61,7 +61,6 @@ public final class ArrayBasedEscaperMap {
   // Creates a replacement array from the given map. The returned array is a
   // linear lookup table of replacement character sequences indexed by the
   // original character value.
-  @VisibleForTesting
   static char[][] createReplacementArray(Map<Character, String> map) {
     checkNotNull(map); // GWT specific check (do not optimize)
     if (map.isEmpty()) {

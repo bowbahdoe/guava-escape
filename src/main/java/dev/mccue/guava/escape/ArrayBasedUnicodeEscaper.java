@@ -21,20 +21,20 @@ import dev.mccue.jsr305.CheckForNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
 /**
- * A {@link UnicodeEscaper} that uses an array to quickly look up replacement characters for a given
+ * A {@code UnicodeEscaper} that uses an array to quickly look up replacement characters for a given
  * code point. An additional safe range is provided that determines whether code points without
  * specific replacements are to be considered safe and left unescaped or should be escaped in a
  * general way.
  *
  * <p>A good example of usage of this class is for HTML escaping where the replacement array
  * contains information about the named HTML entities such as {@code &amp;} and {@code &quot;} while
- * {@link #escapeUnsafe} is overridden to handle general escaping of the form {@code &#NNNNN;}.
+ * {@code #escapeUnsafe} is overridden to handle general escaping of the form {@code &#NNNNN;}.
  *
- * <p>The size of the data structure used by {@link ArrayBasedUnicodeEscaper} is proportional to the
+ * <p>The size of the data structure used by {@code ArrayBasedUnicodeEscaper} is proportional to the
  * highest valued code point that requires escaping. For example a replacement map containing the
  * single character '{@code \}{@code u1000}' will require approximately 16K of memory. If you need
  * to create multiple escaper instances that have the same character replacement mapping consider
- * using {@link ArrayBasedEscaperMap}.
+ * using {@code ArrayBasedEscaperMap}.
  *
  * @author David Beaumont
  * @since 15.0
@@ -59,7 +59,7 @@ public abstract class ArrayBasedUnicodeEscaper extends UnicodeEscaper {
    * safe range. If {@code safeMax < safeMin} then no code points are considered safe.
    *
    * <p>If a code point has no mapped replacement then it is checked against the safe range. If it
-   * lies outside that, then {@link #escapeUnsafe} is called, otherwise no escaping is performed.
+   * lies outside that, then {@code #escapeUnsafe} is called, otherwise no escaping is performed.
    *
    * @param replacementMap a map of characters to their escaped representations
    * @param safeMin the lowest character value in the safe range
@@ -82,7 +82,7 @@ public abstract class ArrayBasedUnicodeEscaper extends UnicodeEscaper {
    * sharing of large replacement mappings.
    *
    * <p>If a code point has no mapped replacement then it is checked against the safe range. If it
-   * lies outside that, then {@link #escapeUnsafe} is called, otherwise no escaping is performed.
+   * lies outside that, then {@code #escapeUnsafe} is called, otherwise no escaping is performed.
    *
    * @param escaperMap the map of replacements
    * @param safeMin the lowest character value in the safe range
@@ -154,7 +154,7 @@ public abstract class ArrayBasedUnicodeEscaper extends UnicodeEscaper {
   /**
    * Escapes a single Unicode code point using the replacement array and safe range values. If the
    * given character does not have an explicit replacement and lies outside the safe range then
-   * {@link #escapeUnsafe} is called.
+   * {@code #escapeUnsafe} is called.
    *
    * @return the replacement characters, or {@code null} if no escaping was required
    */
