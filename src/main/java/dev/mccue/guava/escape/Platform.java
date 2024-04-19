@@ -14,6 +14,8 @@
 
 package dev.mccue.guava.escape;
 
+import static java.util.Objects.requireNonNull;
+
 
 /**
  * Methods factored out so that they can be emulated differently in GWT.
@@ -27,7 +29,8 @@ final class Platform {
 
   /** Returns a thread-local 1024-char array. */
   static char[] charBufferFromThreadLocal() {
-    return DEST_TL.get();
+    // requireNonNull accommodates Android's @RecentlyNullable annotation on ThreadLocal.get
+    return requireNonNull(DEST_TL.get());
   }
 
   /**
