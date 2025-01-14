@@ -15,6 +15,7 @@
 package dev.mccue.guava.escape;
 
 import static dev.mccue.guava.base.Preconditions.checkNotNull;
+import static java.lang.Math.min;
 
 import java.util.Map;
 import dev.mccue.jsr305.CheckForNull;
@@ -129,7 +130,7 @@ public abstract class ArrayBasedUnicodeEscaper extends UnicodeEscaper {
       // The safe range is non-empty and contains values below the surrogate
       // range but may extend above it. We may need to clip the maximum value.
       this.safeMinChar = (char) safeMin;
-      this.safeMaxChar = (char) Math.min(safeMax, Character.MIN_HIGH_SURROGATE - 1);
+      this.safeMaxChar = (char) min(safeMax, Character.MIN_HIGH_SURROGATE - 1);
     }
   }
 

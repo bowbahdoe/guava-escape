@@ -15,8 +15,8 @@
 package dev.mccue.guava.escape;
 
 import static dev.mccue.guava.base.Preconditions.checkNotNull;
+import static java.util.Collections.max;
 
-import java.util.Collections;
 import java.util.Map;
 
 /**
@@ -66,7 +66,7 @@ public final class ArrayBasedEscaperMap {
     if (map.isEmpty()) {
       return EMPTY_REPLACEMENT_ARRAY;
     }
-    char max = Collections.max(map.keySet());
+    char max = max(map.keySet());
     char[][] replacements = new char[max + 1][];
     for (Character c : map.keySet()) {
       replacements[c] = map.get(c).toCharArray();
